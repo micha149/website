@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from "react-helmet"
+import { StaticImage } from "gatsby-plugin-image"
 import Hero from '../components/Hero';
 import LogoLink from '../components/LogoLink';
 import { Image as Writing } from '../images/micha149-writing.svg';
@@ -11,7 +12,7 @@ const Home = () => (
     <>
         <Helmet htmlAttributes={{lang: 'de'}}>
             <title>Michael van Engelshoven</title>
-            <meta name="description" content="Homepage von Michael van Engelshoven, Fullstack Developer" />
+            <meta name="description" content="Homepage von Michael van Engelshoven, Frontend-Entwickler" />
         </Helmet>
 
         <header>
@@ -22,6 +23,28 @@ const Home = () => (
             </h1>
         </Hero>
         </header>
+
+        <section className="flex flex-col md:flex-row gap-16 items-center justify-center my-32">
+            <h2 className="sr-only">Über mich</h2>
+
+            <div className="relative">
+                <div className="absolute rounded-xl bg-slate-600 transform rotate-6 shadow-xl w-48 h-48" />
+                <StaticImage
+                    className="relative rounded-xl transform -rotate-2 w-48 h-48"
+                    src="../images/micha149.jpg"
+                    alt="Porträt von Michael van Engelshoven"
+                    quality={90}
+                    width={200}
+                />
+            </div>
+
+                <p className="text-2xl font-display font-extralight text-center md:text-left max-w-prose">
+                Hallo, mein Name ist <strong className="font-medium dark:font-normal text-pink-500 whitespace-nowrap">Michael van Engelshoven</strong> und
+                ich bin <strong className="font-medium dark:font-normal text-pink-500">Frontend-Entwickler</strong> mit einem Faible für
+                Javascript und React. Aktuell arbeite ich als Lead Developer
+                bei <a className="text-sky-600 font-light dark:text-sky-500 hover:underline underline-offset-2 decoration-1" href="https://www.brainbits.net">brainbits</a> in Köln.
+            </p>
+        </section>
 
         <section>
             <h2 className="text-center font-display text-5xl font-light text-pink-500 mt-32 mb-32">Weitere Profile im Web</h2>

@@ -4,6 +4,9 @@ module.exports = {
         './src/components/*.{tsx, ts}',
     ],
     theme: {
+        fontFamily: {
+            display: '\'Work SansVariable\', sans-serif'
+        },
         extend: {
             animation: {
                 hero: 'hero 20s infinite ease-in-out',
