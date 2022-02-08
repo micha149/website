@@ -1,11 +1,9 @@
-declare module "*.png" {
-    const content: string;
-    export default content;
+declare global {
+    type GetComponentProps<T> = T extends
+        | React.ComponentType<infer P>
+        | React.Component<infer P>
+        ? P
+        : never;
 }
 
-declare module '*.svg' {
-    const Image: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-    const url: string;
-    export { Image };
-    export default url;
-}
+export {};
