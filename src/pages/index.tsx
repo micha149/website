@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import { StaticImage } from "gatsby-plugin-image"
 import Hero from '../components/Hero';
 import LogoLink from '../components/LogoLink';
+import Vignette from '../components/Vignette';
 import { Image as Writing } from '../images/micha149-writing.svg';
 import { Image as GithubLogo } from '../images/github.svg';
 import { Image as TwitterLogo } from '../images/twitter.svg';
@@ -72,6 +73,8 @@ const Home = () => (
                 </li>
             </ul>
         </section>
+
+        <Vignette />
     </>
 );
 
