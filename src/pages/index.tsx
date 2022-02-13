@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import Hero from '../components/Hero';
 import LogoLink from '../components/LogoLink';
 import Vignette from '../components/Vignette';
+import SkillCloud from '../components/ParallaxSkillCloud';
+import Skill from '../components/Skill';
 import { Image as Writing } from '../images/micha149-writing.svg';
 import { Image as GithubLogo } from '../images/github.svg';
 import { Image as TwitterLogo } from '../images/twitter.svg';
@@ -45,6 +47,42 @@ const Home = () => (
                 Javascript und React. Aktuell arbeite ich als Lead Developer
                 bei <a className="text-sky-600 font-light dark:text-sky-500 hover:underline underline-offset-2 decoration-1" href="https://www.brainbits.net">brainbits</a> in Köln.
             </p>
+        </section>
+
+        <section className="max-w-screen-xl mx-auto">
+            <h2 className="text-center font-display text-5xl font-light text-pink-500 mt-80 mb-40">Meine Kompetenzen</h2>
+            <SkillCloud className="min-h-screen text-2xl md:text-4xl font-display font-light mb-80">
+                <Skill weight={5}>Express</Skill>
+                <Skill weight={10}>React</Skill>
+                <Skill weight={9}>Git</Skill>
+                <Skill weight={6}>RxJS</Skill>
+                <Skill weight={5}>PHP</Skill>
+                <Skill weight={9}>Tailwind CSS</Skill>
+                <Skill weight={4}>Kubernetes</Skill>
+                <Skill weight={3}>Kustomize</Skill>
+                <Skill weight={7}>Testing Library</Skill>
+                <Skill weight={9}>Jest</Skill>
+                <Skill weight={10}>Javascript</Skill>
+                <Skill weight={7}>Docker</Skill>
+                <Skill weight={10}>HTML</Skill>
+                <Skill weight={9}>GraphQL</Skill>
+                <Skill weight={10}>CSS</Skill>
+                <Skill weight={4}>WebGL</Skill>
+                <Skill weight={6}>Three.js</Skill>
+                <Skill weight={9}>REST</Skill>
+                <Skill weight={3}>Helm</Skill>
+                <Skill weight={5}>NodeRED</Skill>
+                <Skill weight={4}>KNX</Skill>
+                <Skill weight={5}>Symfony</Skill>
+                <Skill weight={8}>Typescript</Skill>
+                <Skill weight={7}>Node.js</Skill>
+                <Skill weight={9}>Scrum</Skill>
+                <Skill weight={7}>ESLint</Skill>
+                <Skill weight={6}>Gatsby</Skill>
+                <Skill weight={3}>Microservices</Skill>
+                <Skill weight={5}>d3</Skill>
+                <Skill weight={8}>SCSS</Skill>
+            </SkillCloud>
         </section>
 
         <section>
