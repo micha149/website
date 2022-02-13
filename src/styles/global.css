@@ -12,6 +12,43 @@
 
 @layer components {
     body {
-        @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-white overscroll-x-none;
+        @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-white overscroll-x-none overflow-x-hidden;
     }
+}
+
+@layer utilities {
+    .perspective {
+        perspective: 120px;
+    }
+
+    .-translate-z-10,
+    .-translate-z-20,
+    .-translate-z-30,
+    .-translate-z-40,
+    .-translate-z-50,
+    .-translate-z-60,
+    .-translate-z-70,
+    .-translate-z-80,
+    .-translate-z-90,
+    .-translate-z-100 {
+        /* Enhance tailwinds transform propety with a translateZ value */
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+            translateZ(var(--my-translate-z, 0))
+            rotate(var(--tw-rotate))
+            skewX(var(--tw-skew-x))
+            skewY(var(--tw-skew-y))
+            scaleX(var(--tw-scale-x))
+            scaleY(var(--tw-scale-y));
+    }
+
+    .-translate-z-10 { --my-translate-z:  0px; }
+    .-translate-z-20 { --my-translate-z: -10px; }
+    .-translate-z-30 { --my-translate-z: -20px; }
+    .-translate-z-40 { --my-translate-z: -50px; }
+    .-translate-z-50 { --my-translate-z: -80px; }
+    .-translate-z-60 { --my-translate-z: -110px; }
+    .-translate-z-70 { --my-translate-z: -150px; }
+    .-translate-z-80 { --my-translate-z: -200px; }
+    .-translate-z-90 { --my-translate-z: -250px; }
+    .-translate-z-100 { --my-translate-z: -300px; }
 }
