@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from "react-helmet"
 import { StaticImage } from "gatsby-plugin-image"
 import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 import LogoLink from '../components/LogoLink';
-import Vignette from '../components/Vignette';
 import SkillCloud from '../components/ParallaxSkillCloud';
 import Skill from '../components/Skill';
 import { Image as Writing } from '../images/micha149-writing.svg';
@@ -12,7 +12,7 @@ import { Image as TwitterLogo } from '../images/twitter.svg';
 import { Image as XingLogo } from '../images/xing.svg';
 
 const Home = () => (
-    <>
+    <Layout>
         <Helmet htmlAttributes={{lang: 'de'}}>
             <title>Michael van Engelshoven</title>
             <meta name="description" content="Homepage von Michael van Engelshoven, Frontend-Entwickler" />
@@ -111,9 +111,7 @@ const Home = () => (
                 </li>
             </ul>
         </section>
-
-        <Vignette />
-    </>
+    </Layout>
 );
 
 export default Home;
