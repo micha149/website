@@ -3,6 +3,14 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-postcss',
         {
+            resolve: 'gatsby-plugin-svgr',
+            options: {
+                namedExport: 'Image',
+                ref: true,
+                replaceAttrValues: { '#000': 'currentColor' },
+            }
+        },
+        {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 name: 'Michael van Engelshoven',
