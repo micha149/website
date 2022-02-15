@@ -31,3 +31,12 @@
     to = "https://www.michael-van-engelshoven.de"
     status = 301
     force = true
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        Content-Security-Policy = "default-src 'self' 'unsafe-inline'; img-src 'self' data:"
+        X-Frame-Options = "SAMEORIGIN"
+        X-Content-Type-Options = "nosniff"
+        Referrer-Policy = "strict-origin"
+        Permissions-Policy = "camera=(), geolocation=(), microphone=()"
