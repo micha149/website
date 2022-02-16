@@ -31,7 +31,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@netlify/plugin-gatsby": "^1.0.3",
+    "@netlify/plugin-gatsby": "^2.0.2",
     "@netlify/plugin-lighthouse": "^2.1.2",
     "autoprefixer": "^10.4.2",
     "gatsby-plugin-postcss": "^5.5.0",
