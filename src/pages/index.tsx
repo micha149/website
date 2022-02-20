@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import LogoLink from '../components/LogoLink';
+import SectionHeading from '../components/SectionHeading';
 import SkillCloud from '../components/ParallaxSkillCloud';
 import Skill from '../components/Skill';
 import ScrollIndicator from '../components/ScrollIndicator';
@@ -40,7 +41,7 @@ const Home = () => {
             </header>
 
             <section ref={aboutSectionRef} className="flex flex-col md:flex-row gap-16 items-center justify-center my-32">
-                <h2 className="sr-only">Über mich</h2>
+                <SectionHeading className="sr-only">Über mich</SectionHeading>
 
                 <div className="relative">
                     <div className="absolute rounded-xl bg-slate-600 transform rotate-6 shadow-xl w-48 h-48" />
@@ -62,7 +63,8 @@ const Home = () => {
             </section>
 
             <section className="max-w-screen-xl mx-auto">
-                <h2 className="text-center font-display text-5xl font-light text-pink-500 mt-80 mb-40">Meine Kompetenzen</h2>
+                <SectionHeading className="mt-80 mb-40">Meine Kompetenzen</SectionHeading>
+
                 <SkillCloud className="min-h-screen text-2xl md:text-4xl font-display font-light mb-80">
                     <Skill weight={5}>Express</Skill>
                     <Skill weight={10}>React</Skill>
@@ -98,7 +100,8 @@ const Home = () => {
             </section>
 
             <section>
-                <h2 className="text-center font-display text-5xl font-light text-pink-500 mt-32 mb-32">Weitere Profile im Web</h2>
+                <SectionHeading className="mt-32 mb-32">Weitere Profile im Web</SectionHeading>
+
                 <ul className="flex gap-8 justify-center mb-32">
                     <li className="w-1/6 flex justify-center">
                         <LogoLink
