@@ -10,25 +10,25 @@
 
 [[redirects]]
     from = "https://micha149s-website.netlify.app/"
-    to = "https://www.michael-van-engelshoven.de"
+    to = "https://michael-van-engelshoven.de"
     status = 301
     force = true
 
 [[redirects]]
     from = "https://van-engelshoven.de/"
-    to = "https://www.michael-van-engelshoven.de"
+    to = "https://michael-van-engelshoven.de"
     status = 301
     force = true
 
 [[redirects]]
     from = "https://www.van-engelshoven.de/"
-    to = "https://www.michael-van-engelshoven.de"
+    to = "https://michael-van-engelshoven.de"
     status = 301
     force = true
 
 [[redirects]]
-    from = "https://michael-van-engelshoven.de/"
-    to = "https://www.michael-van-engelshoven.de"
+    from = "https://www.michael-van-engelshoven.de/"
+    to = "https://michael-van-engelshoven.de"
     status = 301
     force = true
 
