@@ -5,7 +5,8 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            display: '\'Work SansVariable\', sans-serif'
+            display: '\'Work SansVariable\', sans-serif',
+            body: '\'Work SansVariable\', sans-serif'
         },
         extend: {
             animation: {
