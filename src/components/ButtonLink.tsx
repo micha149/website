@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'gatsby';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 type ButtonProps = {

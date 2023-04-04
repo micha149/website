@@ -1,19 +1,18 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'gatsby';
+import { Link, Outlet } from 'react-router-dom';
 import clsx from 'clsx';
 import Vignette from '../components/Vignette';
 import { Image as Love } from '../images/heart.svg';
 
 type LayoutProps = {
     className?: string,
-    children: ReactNode,
 };
 
-const Layout = ({ children, className }: LayoutProps): JSX.Element => {
+const Layout = ({ className }: LayoutProps): JSX.Element => {
     return (
         <div className={clsx('relative overflow-hidden p-5 w-screen', className)}>
             <main>
-                {children}
+                <Outlet />
             </main>
             <footer className="mt-20 mb-10">
                 <p className="font-display text-sm text-center my-4">
