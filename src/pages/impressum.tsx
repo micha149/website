@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from 'react-router-dom';
 import Button from '../components/ButtonLink';
 import Layout from '../components/Layout';
 import { Image as ArrowIcon } from '../images/arrow-left.svg';
 
 const ImprintPage = (): JSX.Element => (
-    <Layout>
+    <>
         <main className="max-w-prose mx-auto font-body leading-relaxed">
             <h1 className="font-display text-5xl text-pink-500 font-light mt-20">Impressum</h1>
 
@@ -36,7 +36,7 @@ const ImprintPage = (): JSX.Element => (
         <footer className="mx-auto text-center mb-20 mt-10">
             <Button href="/" icon={<ArrowIcon />}>Zurück</Button>
         </footer>
-    </Layout>
+    </>
 );
 
 export default ImprintPage;

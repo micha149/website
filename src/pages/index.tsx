@@ -1,8 +1,6 @@
 import React, { useRef } from 'react';
 import { Helmet } from "react-helmet"
-import { StaticImage } from "gatsby-plugin-image"
 import Hero from '../components/Hero';
-import Layout from '../components/Layout';
 import LogoLink from '../components/LogoLink';
 import SectionHeading from '../components/SectionHeading';
 import SkillCloud from '../components/ParallaxSkillCloud';
@@ -13,6 +11,7 @@ import { Image as Writing } from '../images/micha149-writing.svg';
 import { Image as GithubLogo } from '../images/github.svg';
 import { Image as TwitterLogo } from '../images/twitter.svg';
 import { Image as XingLogo } from '../images/xing.svg';
+import portraitImage from '../images/micha149.jpg';
 
 const Home = () => {
     const heroSectionRef = useRef<HTMLDivElement>(null);
@@ -21,7 +20,7 @@ const Home = () => {
     const aboutSectionInView = useIntersectionObserver(aboutSectionRef);
 
     return (
-        <Layout>
+        <>
             <Helmet htmlAttributes={{lang: 'de'}}>
                 <title>Michael van Engelshoven</title>
                 <meta name="description" content="Homepage von Michael van Engelshoven, Frontend-Entwickler" />
@@ -45,11 +44,10 @@ const Home = () => {
 
                 <div className="relative">
                     <div className="absolute rounded-xl bg-slate-600 transform rotate-6 shadow-xl w-48 h-48" />
-                    <StaticImage
+                    <img
                         className="relative rounded-xl transform -rotate-2 w-48 h-48"
-                        src="../images/micha149.jpg"
+                        src={portraitImage}
                         alt="Porträt von Michael van Engelshoven"
-                        quality={90}
                         width={200}
                     />
                 </div>
@@ -126,7 +124,7 @@ const Home = () => {
                     </li>
                 </ul>
             </section>
-        </Layout>
+        </>
     );
 };
 

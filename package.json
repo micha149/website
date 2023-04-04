@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "description": "Personal website of Michael van Engelshoven",
+  "type": "module",
   "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -16,26 +17,23 @@
   "license": "ISC",
   "dependencies": {
     "@fontsource/work-sans": "^4.5.3",
-    "@svgr/webpack": "^6.2.1",
-    "@types/react-helmet": "^6.1.5",
     "clsx": "^1.1.1",
-    "gatsby": "^4.5.5",
-    "gatsby-plugin-image": "^2.6.0",
-    "gatsby-plugin-manifest": "^4.6.0",
-    "gatsby-plugin-react-helmet": "^5.5.0",
-    "gatsby-plugin-sharp": "^4.6.0",
-    "gatsby-plugin-svgr": "^3.0.0-beta.0",
-    "postcss-nested": "^5.0.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
-    "@netlify/plugin-gatsby": "^2.0.2",
     "@netlify/plugin-lighthouse": "^2.1.2",
+    "@svgr/rollup": "^7.0.0",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.2.0",
     "autoprefixer": "^10.4.2",
-    "gatsby-plugin-postcss": "^5.5.0",
     "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.16"
+    "postcss-nested": "^5.0.6",
+    "tailwindcss": "^3.0.16",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1"
   }
 }
