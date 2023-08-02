@@ -54,11 +54,11 @@ const Home = () => {
                     />
                 </div>
 
-                <p className="text-2xl font-display font-extralight text-center md:text-left max-w-prose">
+                <p className="text-2xl font-display font-extralight text-center md:text-left max-w-[52ch]">
                     Hallo, mein Name ist <strong className="font-medium dark:font-normal text-pink-500 whitespace-nowrap">Michael van Engelshoven</strong> und
                     ich bin <strong className="font-medium dark:font-normal text-pink-500">Frontend-Entwickler</strong> mit einem Faible für
-                    Javascript und React. Aktuell arbeite ich als Lead Developer
-                    bei <a className="text-sky-600 font-light dark:text-sky-500 hover:underline underline-offset-2 decoration-1" href="https://www.brainbits.net">brainbits</a> in Köln.
+                    Javascript und React. Aktuell arbeite ich als Consultant
+                    bei <a className="text-sky-600 font-light dark:text-sky-500 hover:underline underline-offset-2 decoration-1" href="https://www.innoq.com/">INNOQ</a>.
                 </p>
             </section>
 
