@@ -1,0 +1,80 @@
+---
+import clsx from 'clsx';
+import Svg from '../components/Svg.astro';
+
+export type Props = {
+    class?: string,
+    target?: string,
+};
+
+const { class: className, target } = Astro.props;
+---
+<script>
+    class ScrollIndicator extends HTMLElement {
+        private image: SVGSVGElement;
+
+        private target: HTMLElement | null = null;
+
+        private isSelfIntersecting: boolean = false;
+
+        private isTargetIntersecting: boolean = false;
+
+        constructor() {
+            super();
+            const targetId = this.dataset.target;
+            this.target = targetId ? document.getElementById(targetId) : null;
+            this.image = this.querySelector('svg')!;
+
+            if (!this.target) {
+                return;
+            }
+
+            const observer = new IntersectionObserver(this.handleIntersection);
+
+            observer.observe(this.target);
+            observer.observe(this);
+        }
+
+        play() {
+            this.removeEventListener('animationiteration', this.handleAnimationEnd);
+            this.image.style.animationPlayState = 'running';
+        }
+
+        pause() {
+            if (this.image.style.animationPlayState === 'paused') {
+                return;
+            }
+
+            this.removeEventListener('animationiteration', this.handleAnimationEnd);
+            this.addEventListener('animationiteration', this.handleAnimationEnd, { once: true });
+        }
+
+        private handleAnimationEnd() {
+            this.image.style.animationPlayState = 'paused';
+        }
+
+        private handleIntersection: IntersectionObserverCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.target === this.target) {
+                    this.isTargetIntersecting = entry.isIntersecting;
+                }
+
+                if (entry.target === this) {
+                    this.isSelfIntersecting = entry.isIntersecting;
+                }
+            })
+
+            if (!this.isSelfIntersecting || this.isTargetIntersecting) {
+                this.pause();
+            } else {
+                this.play();
+            }
+        }
+    }
+
+    customElements.define('scroll-indicator', ScrollIndicator);
+</script>
+
+<scroll-indicator data-target={target} class={clsx(className, 'py-6 flex justify-center items-center')}>
+    <Svg src="images/arrow-down.svg" class="w-20 animate-scroll" />
+</scroll-indicator>

@@ -1,0 +1,42 @@
+---
+import { optimize } from 'svgo';
+
+export type Props = {
+    src: string,
+    class?: string,
+}
+
+const { src, ...attributes } = Astro.props;
+
+const filepath = `/src/${src}`;
+const files = import.meta.glob<string>('/src/**/*.svg', { eager: true, as: 'raw' });
+
+if (!(filepath in files)) {
+    throw new Error(`${filepath} not found`);
+}
+
+const result = optimize(files[filepath], {
+  // optional but recommended field
+  path: filepath,
+  // all config fields are also available here
+  multipass: true,
+  plugins: [
+      {
+          name: "addAttributesToSVGElement",
+          params: {
+            attributes: [attributes]
+          },
+      },
+      {
+        name: 'convertColors',
+        params: {
+          currentColor: '#000',
+        },
+      }
+  ]
+});
+
+const optimizedSvg = result.data;
+
+---
+<Fragment set:html={optimizedSvg} />

@@ -10,6 +10,14 @@
     }
 }
 
+@layer base {
+    skill-cloud {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 @layer components {
     body {
         @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-white overscroll-x-none overflow-x-hidden;

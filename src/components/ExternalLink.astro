@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+export type Props = HTMLAttributes<'a'> & {
+    href: string,
+};
+
+const { href, ...attrs } = Astro.props;
+---
+<a
+    class="text-sky-600 dark:text-sky-500 hover:underline underline-offset-2 decoration-1 whitespace-nowrap"
+    target="_blank"
+    rel="noopener noreferrer"
+    href={href}
+    {...attrs}
+>
+    <slot>{href}</slot>
+</a>

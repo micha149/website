@@ -1,0 +1,29 @@
+---
+import clsx from 'clsx';
+import Svg from './Svg.astro';
+import generateId from '../util/uniqueId';
+
+export type Props = {
+    class?: string,
+    description: string,
+    href: string,
+    src: string,
+};
+
+const id = generateId('logo-link');
+
+const { src, class: className, description, href } = Astro.props;
+---
+
+<a
+    id={id}
+    aria-label={description}
+    class={clsx(
+        'block w-24 h-24 transition transform duration-500',
+        'hover:text-sky-600 hover:scale-110',
+        className,
+    )}
+    href={href}
+>
+    <Svg src={src} class="w-full h-full" aria-labelledby={id} />
+</a>
