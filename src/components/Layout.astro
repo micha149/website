@@ -1,0 +1,70 @@
+---
+import Vignette from './Vignette';
+import Svg from '../components/Svg.astro';
+import '../styles/global.css';
+import "@fontsource/work-sans/variable.css";
+
+export type Props = {
+    lang?: string,
+    title: string,
+    description: string,
+};
+
+const { lang, title, description }  = Astro.props
+---
+
+<html lang={lang ?? 'de'}>
+    <head>
+        <title>{title}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content={description}>
+    </head>
+    <body>
+        <div class="relative overflow-hidden p-5 w-screen">
+            <main>
+                <slot />
+            </main>
+            <footer class="mt-20 mb-10">
+                <p class="font-display text-sm text-center my-4">
+                    Created with
+                    <span class="inline-block translate-y-1 mx-2">
+                        <Svg
+                            aria-label="love"
+                            class="w-5 text-pink-500 animate-heartbeat"
+                            src="images/heart.svg"
+                        />
+                    </span>
+                    by Michael van Engelshoven
+                </p>
+
+                <nav class="font-display text-sm text-slate-400 text-center my-2">
+                    <ul class="flex justify-center divide-x divide-slate-600 leading-none">
+                        <li class="px-2">
+                            <a class="hover:underline underline-offset-2 decoration-1" href="/impressum">
+                                Impressum
+                            </a>
+                        </li>
+                        <li class="px-2">
+                            <a class="hover:underline underline-offset-2 decoration-1" href="/datenschutz">
+                                Datenschutz
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <p class="font-display text-sm text-slate-400 text-center my-2">
+                    <a
+                        class="hover:underline underline-offset-2 decoration-1"
+                        href="https://github.com/micha149/website"
+                    >
+                        Source on Github
+                    </a>
+                </p>
+            </footer>
+
+            <Vignette />
+        </div>
+    </body>
+</html>

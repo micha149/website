@@ -1,0 +1,114 @@
+---
+import Hero from '../components/Hero';
+import LogoLink from '../components/LogoLink.astro';
+import SectionHeading from '../components/SectionHeading';
+import SkillCloud from '../components/ParallaxSkillCloud.astro';
+import ScrollIndicator from '../components/ScrollIndicator.astro';
+import Svg from '../components/Svg.astro';
+import portraitImage from '../images/micha149.jpg';
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Michael van Engelshoven" description="Homepage von Michael van Engelshoven, Frontend-Entwickler">
+    <header>
+        <Hero className="min-h-screen">
+            <h1>
+                <span id="pageTitle" class="sr-only">micha149's website</span>
+                <Svg src="images/micha149-writing.svg" aria-describedby="pageTitle" class="w-64 -rotate-6 dark:text-slate-200" />
+            </h1>
+            <ScrollIndicator
+                target="about-section"
+                class="text-slate-400 absolute inset-x-0 bottom-0 mb-[15vh]"
+            />
+        </Hero>
+    </header>
+
+    <section id="about-section" class="flex flex-col md:flex-row gap-16 items-center justify-center my-32">
+        <SectionHeading className="sr-only">Über mich</SectionHeading>
+
+        <div class="relative">
+            <div class="absolute rounded-xl bg-slate-600 transform rotate-6 shadow-xl w-48 h-48" />
+            <img
+                class="relative rounded-xl transform -rotate-2 w-48 h-48"
+                src={portraitImage}
+                alt="Porträt von Michael van Engelshoven"
+                width={200}
+            />
+        </div>
+
+        <p class="text-2xl font-display font-extralight text-center md:text-left max-w-[52ch]">
+            Hallo, mein Name ist <strong class="font-medium dark:font-normal text-pink-500 whitespace-nowrap">Michael van Engelshoven</strong> und
+            ich bin <strong class="font-medium dark:font-normal text-pink-500">Frontend-Entwickler</strong> mit einem Faible für
+            Javascript und React. Aktuell arbeite ich als Consultant
+            bei <a class="text-sky-600 font-light dark:text-sky-500 hover:underline underline-offset-2 decoration-1" href="https://www.innoq.com/">INNOQ</a>.
+        </p>
+    </section>
+
+    <section class="max-w-screen-xl mx-auto">
+        <SectionHeading className="mt-80 mb-40">Meine Kompetenzen</SectionHeading>
+
+        <SkillCloud
+            class="min-h-screen text-2xl md:text-4xl font-display font-light mb-80"
+            skills={[
+                { name: 'Express', weight: 5 },
+                { name: 'React', weight: 10 },
+                { name: 'Git', weight: 9 },
+                { name: 'RxJS', weight: 6 },
+                { name: 'PHP', weight: 5 },
+                { name: 'Tailwind CSS', weight: 9 },
+                { name: 'Kubernetes', weight: 4 },
+                { name: 'Kustomize', weight: 3 },
+                { name: 'Testing Library', weight: 7 },
+                { name: 'Jest', weight: 9 },
+                { name: 'Javascript', weight: 10 },
+                { name: 'Docker', weight: 7 },
+                { name: 'HTML', weight: 10 },
+                { name: 'GraphQL', weight: 9 },
+                { name: 'CSS', weight: 10 },
+                { name: 'WebGL', weight: 4 },
+                { name: 'Three.js', weight: 6 },
+                { name: 'REST', weight: 9 },
+                { name: 'Helm', weight: 3 },
+                { name: 'NodeRED', weight: 5 },
+                { name: 'KNX', weight: 4 },
+                { name: 'Symfony', weight: 5 },
+                { name: 'Typescript', weight: 8 },
+                { name: 'Node.js', weight: 7 },
+                { name: 'Scrum', weight: 9 },
+                { name: 'ESLint', weight: 7 },
+                { name: 'Gatsby', weight: 6 },
+                { name: 'Microservices', weight: 3 },
+                { name: 'd3', weight: 5 },
+                { name: 'SCSS', weight: 8 },
+            ]}
+        />
+    </section>
+
+    <section>
+        <SectionHeading className="mt-32 mb-32">Weitere Profile im Web</SectionHeading>
+
+        <ul class="flex gap-8 justify-center mb-32">
+            <li class="w-1/6 flex justify-center">
+                <LogoLink
+                    description="Mein Github-Profil"
+                    href="https://github.com/micha149"
+                    src="images/github.svg"
+                />
+            </li>
+            <li class="w-1/6 flex justify-center">
+                <LogoLink
+                    description="Meine Tweets"
+                    href="https://twitter.com/micha149"
+                    src="images/twitter.svg"
+                />
+            </li>
+            <li class="w-1/6 flex justify-center">
+                <LogoLink
+                    description="Mein Profil auf Xing"
+                    href="https://www.xing.com/profile/Michael_vanEngelshoven"
+                    src="images/xing.svg"
+                />
+            </li>
+        </ul>
+    </section>
+</Layout>

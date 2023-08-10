@@ -1,0 +1,35 @@
+---
+import clsx from 'clsx';
+import type { HTMLAttributes } from 'astro/types'
+import Svg from './Svg.astro';
+
+export type Props = HTMLAttributes<'a'> & {
+    icon?: string,
+    href: string,
+    class?: string,
+};
+
+const { class: className, href, icon, ...attrs } = Astro.props;
+---
+<a
+    href={href}
+    class={clsx(
+        'inline-flex border py-2 border-sky-500 rounded items-center',
+        'hover:bg-sky-500 hover:text-white',
+        'focus-visible:ring-2 focus-visible:ring-pink-500 ring-offset-2 dark:ring-offset-slate-900 focus:outline-none',
+        icon ? 'pl-8 pr-10' : 'px-10',
+        className,
+    )}
+    {...attrs}
+>
+    {icon ? (
+        <>
+            <Svg class="w-6 h-6 mr-2" src={icon} />
+            <span>
+                <slot />
+            </span>
+        </>
+    ) : (
+        <slot />
+    )}
+</a>
