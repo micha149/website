@@ -1,0 +1,13 @@
+---
+import clsx from 'clsx';
+
+export type Props = {
+    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+    class?: string,
+};
+
+const { as: Component = 'h2', class: className} = Astro.props;
+---
+<Component className={clsx('text-center font-display text-5xl font-light text-pink-500', className)}>
+    <slot />
+</Component>

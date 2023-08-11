@@ -16,23 +16,15 @@
   "author": "Michael van Engelshoven <michael@van-engelshoven.de>",
   "license": "ISC",
   "dependencies": {
-    "@astrojs/react": "^2.2.1",
     "@astrojs/tailwind": "^4.0.0",
     "@fontsource/work-sans": "^4.5.14",
     "astro": "^2.10.1",
     "astro-webmanifest": "^0.6.0",
     "clsx": "^1.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.10.0",
     "svgo": "^3.0.2"
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "^4.0.7",
-    "@svgr/rollup": "^7.0.0",
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.5",
     "postcss-nested": "^6.0.1",
